@@ -15,7 +15,7 @@ class DDColor_Colorize:
     def INPUT_TYPES(s):
         return {"required": {
             "image": ("IMAGE", ),
-            "model_input_size": ("INT", {"default": 512,"min": 0, "max": 0xffffffffffffffff, "step": 1}),
+            "model_input_size": ("INT", {"default": 512,"min": 32, "max": 4096, "step": 32}),
             "checkpoint": (
             [   
                 "ddcolor_paper_tiny.pth",
@@ -23,7 +23,7 @@ class DDColor_Colorize:
                 "ddcolor_modelscope.pth",
                 "ddcolor_artistic.pth",
             ], {
-               "default": "ddcolor_paper.pth"
+               "default": "ddcolor_paper_tiny.pth"
             }),
             
             
